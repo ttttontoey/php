@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:focus{
+            background-color: blue;
+        }
+        :target{
+            border:2px solid green;
+            background-color: yellow;
+        }
+        div{font-size:16pt}
+        div:hover{
+            background-color: lightgray;
+            color:blue;
+        }
+        div:active{
+            background-color: red;
+            color: yellow;
+        }
+        a:link{color: blue;}
+        a:visited{color:purple;}
+        span{
+            background: skyblue;
+            font:12pt tahoma;
+            color:crimson;
+            margin: 5px;
+            display: block;
+            padding: 5px;
+        }
+        p,div{
+            border: solid 2px tomato;
+            width: 150px;
+        }
+        p{display: inline;}
+        div{display: inline-block;}
+    </style>
+    
+</head>
+<body>
+    <form action="">
+        Phone:
+        <input type="email" disabled="disabled">
+    </form>
+    <a href="#news1">Content 1 </a><br>
+    <a href="#news2">Content 2 </a><br>
+    <a href="#news3">Content 3 </a><br>
+    <a href="#news4">Content 4 </a><br>
+    <a href="https://www.y8.com/">xxx.com</a><br>
+    <a href="https://www.youtube.com/">www.google.com</a><br>
+
+    <p id="new1">Content 1</p><br>
+    <p id="new2">Content 2</p><br>
+    <div>
+        Hi,If you see this message, it means that you have your eyes open.
+    </div>
+    <span>The display property</span>
+    specifies the display behavior <br>
+    <p>(the tupe of rendering box)</p>.
+    In HTML,
+    <div>the default display property value is taken from the HTML specification</div>
+    or from default style sheet
+    </html>
