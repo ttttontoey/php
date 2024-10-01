@@ -20,12 +20,18 @@ if (isset($_SESSION['id'])) {
 <body style="background-color: #F2F5ED;">
     <div class="container-lg">
         <center>
-            <h1 style="font-family: Comic Sans MS;" class="mt-4"><i class="bi bi-apple">Fruit</i></h1>
             <?php include "nav.php" ?>
         </center>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
-                <div class="card mt-3">
+                <!-- <div class="alert alert-danger"> -->
+                    <?php
+                    if(isset($_SESSION['error'])){
+                        echo "<div class='alert alert-danger' >Username or Passwoed are incorrect</div>";
+                        unset($_SESSION['error']);
+                    }
+                    ?>
+                <div class="card">
                     <h5 class="card-header">เข้าสู่ระบบ</h5>
                     <div class="card-body">
                         <form action="verify.php" method="post">

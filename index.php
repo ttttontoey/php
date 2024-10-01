@@ -16,7 +16,6 @@ session_start();
 <body style="background-color: #F2F5ED;">
     <div class="container-lg">
         <center>
-            <h1 style="font-family: Comic Sans MS;" class="mt-4"><i class="bi bi-apple">Fruit</i></h1>
             <?php include "nav.php" ?>
         </center>
         <div class="mt-3">
