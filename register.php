@@ -18,8 +18,19 @@ if (isset($_SESSION['id'])) {
 </head>
 
 <body style="background-color: #F2F5ED;">
+    <?php include "nav.php" ?>
+    <?php
+if (isset($_SESSION['add_login'])){
+if($_SESSION[ ' add_login' == 'error'){
+echo "<div class= 'alert alert-danger'>
+ชื่อบัญชีซ้ำหรือฐานข้อมูลมีมีปัญหา</div>";
+}else{
+echo "<div class='alert alert-success'>
+เพิ่มบัญชีเรียบร้อยแล้ว</div>";
+unset($_SESSION['add_login' ]);
+}
+?>
     <div class="container-lg">
-            <?php include "nav.php" ?>
         <div class="row mt-3">
             <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
                 <div class="card">
