@@ -11,14 +11,17 @@ if (!isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <center>
-        <h1 style="font-family: Comic Sans MS;">Webboard By Tontoey</h1>
         <?php include "nav.php" ?>
     </center>
-    <div class="card text-dark bg-white border-info">
+    <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
+        <div class="card text-dark bg-white border-info mt-3">
         <div class="card-header bg-info text-white">ตั้งกระทู้ใหม่</div>
         <div class="card-body">
             <form action="newpost_save.php" method="post">
@@ -30,12 +33,10 @@ if (!isset($_SESSION['id'])) {
                                 $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
                                 $sql="SELECT * FROM category";
                                 foreach($conn->query($sql)as $row){
-                                    echo "<option value=".$row['id'].">".$row['name']."</option>";
+                                echo "<option value=".$row['id'].">".$row['name']."</option>";
                                 }
-                            $conn=null;
-                            ?>
-                            <!-- <option value="general">เรื่องทั่วไป</option>
-                            <option value="study">เรื่องเรียน</option> -->
+                                $conn=null;
+                            ?>                       
                         </select>
                     </div>
                 </div>
@@ -55,18 +56,22 @@ if (!isset($_SESSION['id'])) {
                     <div class="col-1g-12">
                         <center>
                             <button type="submit" class="btn btn-info btn-sm text-white">
-                                <i class="bi bi-caret-right-square me-1"></i>บันทึกข้อความ
+                                <i class="bi bi-caret-right-square me-1"><a href="index.php"></a></i>บันทึกข้อความ
                             </button>
                         </center>
                     </div>
                 </div>
             </form>
         </div>
+        </div>
     </div>
 </div>
 </body>
 
 </html>
+
+
+
 
 <!-- <?php
         echo  "<table>

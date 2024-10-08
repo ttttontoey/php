@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+    session_start();
+    $category = $_POST['category'];
+    $topic = $_POST['topic'];
+    $comment = $_POST['comment'];
+    $conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
+    $id=$_SESSION['user_id'];
+    $sql="INSERT INTO post (title,content,post_date,cat_id,user_id) VALUES ('$topic','$comment',Now(),'$category','$id')";
+    $conn->exec($sql);
+    $conn = null;
+    header("location:index.php");
+?>
