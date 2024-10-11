@@ -22,7 +22,7 @@ if (!isset($_SESSION['id'])) {
     </center>
     <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
         <div class="card text-dark bg-white border-info mt-3">
-        <div class="card-header bg-info text-white">ตั้งกระทู้ใหม่</div>
+        <div class="card-header bg-info text-white" >ตั้งกระทู้ใหม่</div>
         <div class="card-body">
             <form action="newpost_save.php" method="post">
                 <div class="row mb-3">
