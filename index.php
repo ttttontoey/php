@@ -29,45 +29,9 @@ session_start();
 
 <body>
     <div class="container-lg">
-<<<<<<< Updated upstream
         <center>
             <?php include "nav.php" ?>
-        </center>
-        <div class="mt-3">
-            <label>หมวดหมู่</label>
-            <span class="dropdown">
-                <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    -- ทั้งหมด --
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-archive"> ทั้งหมด</i></a></li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-repeat"> เรื่องทั่วไป</i></a></li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-backpack"> เรื่องเรียน</i></a></li>
-                </ul>
-            </span>
-            <?php
-        if (isset($_SESSION['id'])) {
-            echo "<button type='button' class='btn btn-success' style='float:right;'><a class='link-light link-offset-2 link-underline link-underline-opacity-0' href='newpost.php'><i class='bi bi-plus'></i>สร้างกระทู้ใหม่</a></button>";
-        }
-        ?>
-
-        <table class="table table-striped mt-3">
-            <?php
-                $conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
-                $sql = "SELECT category.name,post.title,post.id,user.login,post.post_date FROM post INNER JOIN user ON (post.user_id=user.id) INNER JOIN category as category ON (post.cat_id=category.id) ORDER BY post.post_date DESC";
-                $result = $conn->query($sql);
-                while($row = $result->fetch()){
-                    echo "<tr><td>[ $row[0] ] <a href=post.php?id=$row[2] style=text-decoration:none>$row[1]</a>";
-                    if(isset($_SESSION['id']) && $_SESSION["role"] == 'a'){
-                        echo "<a onclick='return myFunction($row[2])' class='btn btn-danger' style='float:right' role='button'><i class='bi bi-trash'></i></a>";
-                    }
-                    echo "<br>$row[3] - $row[4]</td></tr>";
-                }
-                $conn = null;
-=======
-        <h1 style="text-align: center;" class="mt-3">Webboard KakKak</h1>
-        <!--navbar -->
-        <?php include "nav.php" ?>
+    </center>
         <!-- หมวดหมู่ -->
         <label class="mt-3">หมวดหมู่ :</label>
         <span class="dropdown">
@@ -93,7 +57,6 @@ session_start();
                 echo  "<a href='newpost.php' class='btn btn-success float-end mt-3'>
                     <i class='bi bi-plus-lg'></i>สร้างกระทู้ใหม่ </a>";
             }
->>>>>>> Stashed changes
             ?>
         </span>
 
@@ -123,7 +86,6 @@ session_start();
 
     </div>
 
-<<<<<<< Updated upstream
     <ul class="dropdown-menu" aria-labelledby="Button2">
         <li><a href="#" class="dropdown-item"></a></li>
     </ul>
@@ -145,10 +107,10 @@ session_start();
         }
 
         ?> -->
-=======
+
 
 
 </body>
 
 </html>
->>>>>>> Stashed changes
+
