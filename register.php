@@ -15,6 +15,19 @@ if (isset($_SESSION['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        function OnBlurPwd() {
+            let pwd = document.getElementById("pwd");
+            let confp = document.getElementById("confp");
+
+            if (pwd.value !== confp.value) {
+                alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
+                pwd.value="";
+                confp.value="";
+            }
+        }
+    </script>
 </head>
 
 <body style="background-color: #F2F5ED;">
@@ -46,6 +59,12 @@ if (isset($_SESSION['id'])) {
                                 <label for="pwd" class="col-lg-3 col-form-label">Password :</label>
                                 <div class="col-lg-8">
                                 <input id="pwd" type="password" class="form-control" name="pwd" required>
+                                </div>
+                            </div>
+                            <div class="mb-2 row">
+                                <label for="pwd" class="col-lg-3 col-form-label">Confirm Password :</label>
+                                <div class="col-lg-8">
+                                <input id="confp" type="password" class="form-control" name="pwd" onblur="OnBlurPwd()" required>
                                 </div>
                             </div>
                             <div class="mb-2 row">

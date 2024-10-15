@@ -15,6 +15,20 @@ if (isset($_SESSION['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        function button() {
+            var x = document.getElementById("password");
+            var btn = document.getElementById("Btn");
+            
+            if (x.type == "password") {
+                x.type = "text";
+                btn.innerHTML = "<i class='bi bi-eye-slash'></i>";
+            } else {
+                x.type = "password";
+                btn.innerHTML = "<i class='bi bi-eye'></i>";
+            }
+        }
+    </script>
 </head>
 
 <body style="background-color: #F2F5ED;">
@@ -41,7 +55,10 @@ if (isset($_SESSION['id'])) {
                             </div>
                             <div class="form-group mt-3">
                                 <label for="password" class="form-label">Password:</label>
+                                <div class="input-group">
                                 <input id=password type="password" class="form-control" name="Password">
+                                <button class="btn btn-secondary" type="button" id="Btn" onclick="button()"><i class="bi bi-eye"></i></button>
+                                </div>
                             </div>
                             <div class="mt-3 d-flex justify-content-center">
                                 <input type="submit" class="btn btn-sm btn-success me-3" value="Login">

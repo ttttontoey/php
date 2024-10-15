@@ -1,4 +1,4 @@
-<h1 style="font-family: Comic Sans MS;text-align: center;" class="mt-4"><i class="bi bi-apple">Fruit</i></h1>
+<h1 style="font-family: Comic Sans MS;text-align: center;" class="mt-4"><i class="bi bi-arrow-through-heart-fill"></i> tinjao </h1>
 <nav class="navbar navbar-expand-lg" style="background-color:#d3d3d3;">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><i class="bi bi-house"> Home</i></a>

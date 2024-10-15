@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body style="background-color: #F2F5ED;">
     <div class="container-lg">
 
         <?php
@@ -20,7 +20,7 @@
         <?php
         session_start();
         include "nav.php" ?>
-        <div class="mt-3">
+        <!-- <div class="mt-3">
             <p style="text-align: center;">
                 ต้องการดูกระทู้หมายเลข
                 <?php
@@ -32,7 +32,7 @@
 
                 ?>
             </p>
-        </div>
+        </div> -->
         <!-- post -->
         <div class="card text-dark bg-white border-primary mt-3 col-sm-11 col-md-10 col-lg-8  mx-auto">
             <?php
@@ -53,13 +53,15 @@
         </div>
         <!-- แสดงผลความคิดเห็น -->
         <?php
+        $id = 0;
         $sql_com = "SELECT comment.id,comment.content,comment.post_date,user.login FROM comment  
                 INNER JOIN user ON (comment.user_id = user.id) WHERE $post_id = comment.post_id ORDER BY comment.post_date ;";
         $result = $conn->query($sql_com);
 
         while ($row = $result->fetch()) {
+            $id = $id+1;
             echo "  <div class='card text-dark bg-white border-info mt-3 col-sm-11 col-md-10 col-lg-8  mx-auto'>
-                        <div class='card-header bg-info text-white  '> ความคิดเห็นที่ $row[0] </div>
+                        <div class='card-header bg-info text-white  '> ความคิดเห็นที่ $id </div>
                         <div class='card-body'> 
                             <div > $row[1] </div>
                             <div class='mt-2'> $row[3] : $row[2]</div>
