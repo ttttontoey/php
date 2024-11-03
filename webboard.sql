@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2024 at 05:13 AM
+-- Generation Time: Oct 15, 2024 at 05:47 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -56,6 +56,22 @@ CREATE TABLE `comment` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUES
+(4, 'เสร่อ', '2024-10-15 09:23:52', 2, 4),
+(5, 'regงับเตง', '2024-10-15 10:00:47', 3, 1),
+(6, 'ลุยเลอ', '2024-10-15 10:00:50', 3, 1),
+(7, 'ละค*ยไร', '2024-10-15 10:01:04', 3, 4),
+(8, 'มึงก็ไม่มีอย่ามาพาล', '2024-10-15 10:01:13', 3, 4),
+(9, 'นี่ไง เพราะงี้ไงเลยไม่มีเมีย สมน้ำหน้ามึง', '2024-10-15 10:01:55', 2, 4),
+(10, 'ยังโสดนะคะ', '2024-10-15 10:05:06', 5, 4),
+(11, 'กูไม่ได้ถาม ขอบคุณครับ', '2024-10-15 10:05:21', 2, 4),
+(12, 'กูก็ไม่ได้ตอบมึงค้าา กูบอกเจ้าของกระทู้เนาะ อย่าสำคัญตัว', '2024-10-15 10:06:10', 5, 4),
+(13, 'นี่แหละที่ต้องการ สินสอดเท่าไหร่ครับ', '2024-10-15 10:06:51', 3, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +93,7 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
 (1, 'ดรอปยังไง', 'เรียนไม่ไหวแล้วตื่นเช้าเกิน', '2024-10-08 09:50:37', 2, 2),
-(2, 'ทำไงให้มีแฟน', '?_?', '2024-10-08 10:12:58', 7, 3);
+(4, 'ทำไงให้มีแฟนครับ', 'อยากมีเมีย', '2024-10-15 09:23:42', 7, 3);
 
 -- --------------------------------------------------------
 
@@ -102,7 +118,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `login`, `password`, `name`, `gender`, `email`, `role`) VALUES
 (1, 'mem', '356a192b7913b04c54574d18c28d46e6395428ab', 'mama', 'M', '0928934814b@email.com', 'm'),
 (2, '1', '356a192b7913b04c54574d18c28d46e6395428ab', '1', 'M', 'bgfd@email.com', 'm'),
-(3, 'll', '110c8a30c16070bf2813480d9492a1a170a7d80a', 'll', 'M', '123@email.com', 'm');
+(3, 'll', '110c8a30c16070bf2813480d9492a1a170a7d80a', 'll', 'M', '123@email.com', 'a'),
+(4, 'ji', '356a192b7913b04c54574d18c28d46e6395428ab', 'j', 'M', 'j@email.com', 'm'),
+(5, 'jj', '7323a5431d1c31072983a6a5bf23745b655ddf59', 'jj', 'M', 'jj@email.com', 'm');
 
 --
 -- Indexes for dumped tables
@@ -146,19 +164,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
