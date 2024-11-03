@@ -11,6 +11,10 @@
                 echo "<li class='nav-item dropdown'>";
                 echo "<a class='btn btn-outline-secondary btn-sm dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-person-circle'> $_SESSION[username]</i></a>";
                 echo "<ul class='dropdown-menu'>";
+                if ($_SESSION['role'] == "a"){
+                    echo "<a class='dropdown-item' href='category.php'><i class='bi bi-bookmarks'></i> จัดการหมวดหมู่</a>";
+                    echo "<a class='dropdown-item' href='user.php'><i class='bi bi-person-check'></i> จัดการผู้ใช้งาน</a>";
+                }
                 echo "<li><a class='dropdown-item' href='logout.php'><i class='bi bi-door-closed'> ออกจากระบบ</i></a></li>";
                 echo "</ul>";
                 echo "</li>";
