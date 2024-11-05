@@ -16,7 +16,7 @@ if (!isset($_COOKIE['catagory'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body style="background-color: #F2F5ED;">
     <?php
             include "nav.php"
     ?>

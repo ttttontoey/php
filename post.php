@@ -15,18 +15,8 @@ session_start();
     <?php
             include "nav.php"
     ?>
-    <div align = "center">
-        <?php
+<?php
             $num = $_GET['id'];
-            echo "ต้องการดูกระทู้หมายเลข ". $num."<BR>";
-            if ($num % 2 == 0)
-            {
-                echo "เป็นกระทู้หมายเลขคู่";
-            }
-            else
-            {
-                echo "เป็นกระทู้หมายเลขคี่";
-            }
             $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root", "");
             $sql = "SELECT t1.title,t1.id,t2.login,t1.post_date,t1.content From post as t1 
                 Inner Join user as t2 ON (t1.user_id=t2.id) where t1.id=$num";
@@ -37,8 +27,7 @@ session_start();
             }
             $conn=null;
         ?>
-        </div>
-        <div class="container-fluid">
+        <div class="container-fluid mt-3">
         <div class="card text-dark bg-white border-primary mx-auto" style="width: 60%;">
             <div class="card-header bg-primary text-white"><?php echo $head; ?></div>
             <div class="card-body">
@@ -64,9 +53,8 @@ session_start();
                     }
                 }
                 $conn=null;
-            
-
-                if ($_SESSION['role'] != 'b'){
+        
+                if (isset($_SESSION['id'])&&$_SESSION['role'] != 'b'){
                     echo "<div class='card text-dark bg-white border-success mx-auto' style='width: 60%;'>
                             <div class='card-header bg-success text-white'>แสดงความคิดเห็น</div>
                             <div class='card-body'>
