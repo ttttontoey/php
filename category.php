@@ -35,7 +35,7 @@ session_start();
                     }
                     if (isset($_SESSION['cat_edit_save'])){
                         if ($_SESSION['cat_edit_save'] == 'done'){
-                            echo "<div class='alert alert-success'>แก้ไขหมู่เรียบร้อยแล้ว</div>";
+                            echo "<div class='alert alert-success'>แก้ไขหมวดหมู่เรียบร้อยแล้ว</div>";
                         }
                         unset($_SESSION['cat_edit_save']);
                     }

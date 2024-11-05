@@ -41,7 +41,7 @@ if (isset($_SESSION['id'])) {
                 <!-- <div class="alert alert-danger"> -->
                     <?php
                     if(isset($_SESSION['error'])){
-                        echo "<div class='alert alert-danger' >Username or Passwoed are incorrect</div>";
+                        echo "<div class='alert alert-danger' >Username or Password are incorrect</div>";
                         unset($_SESSION['error']);
                     }
                     ?>
